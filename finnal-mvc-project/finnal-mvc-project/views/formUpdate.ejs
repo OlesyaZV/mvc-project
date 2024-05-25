@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Update plan</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="">
+            <h1 style="padding-bottom: 20px;">Update plan</h1>
+            <a href="/" class="common-btn" style="background-color: aqua;">Back to plans list</a>
+        </div>
+        <form class="" action="/trip/<%= trip.id %>/update" method="POST">
+            <div class="">
+                <label for="description" class="">Trip</label>
+                <input class="" type="text" name="description"
+                    id="description" value="<%= trip.description %>">
+            </div>
+            
+            <div class="">
+                <label for="date" class="">Date</label>
+                <input class="" type="date" name="date" id="date"
+                    value="<%= trip.date %>">
+            </div>
+            <div class="">
+                <label for="date" class="">Transport</label>
+                <input class="" type="text" name="transport" id="transport"
+                    value="<%= trip.transport %>">
+            </div>
+            <div class="">
+                <label for="date" class="">Hotel</label>
+                <input class="" type="text" name="hotel" id="hotel"
+                    value="<%= trip.hotel %>">
+            </div>
+            
+            <div class="">
+                <button type="submit"
+                    class="common-btn" style="background-color: cornsilk;">Update</button>
+                <button type="button"
+                    class="common-btn"
+                    style="background-color: red;"
+                    onclick="removeTrip()">Remove trip</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        async function removeTrip() {
+            try {
+                const tripId = "<%= trip.id %>";
+                const response = await fetch(`/trip/${tripId}`, {
+                    method: 'DELETE'
+                });
+                window.location.href = '/';
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

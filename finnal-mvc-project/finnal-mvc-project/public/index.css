@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 2000px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+}
+
+.title-block{
+    display: flex;
+
+    gap: 20px;
+}
+
+.title{
+    font-size: 35px;
+}
+
+.common-btn{
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    font-size: 20px;
+    
+}
+
+
+.trip{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 2px solid lightgray;
+    width: fit-content;
+}   
+
+.trip-elem{
+    font-size: 20px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Plans list</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div >
+            <h1 style="padding-bottom: 20px;">Trip plans</h1>
+            <a href="/add" class="common-btn" style="background-color: lightsalmon;">Add plan</a>
+        </div>
+        <% trips.forEach(trip => { %>
+        <div class="trip">
+            <div class="trip-elem">Description: <%= trip.description %></div>
+                <div class="trip-elem">Date: <%= trip.date %></div>
+                <div class="trip-elem">Hotel: <%= trip.hotel %></div>
+                <div class="trip-elem">Transport: <%= trip.transport %></div>
+            <div class="">
+                <a href="/trip/<%= trips.indexOf(trip) %>/edit" class="common-btn" style="background-color: lime;">Edit</a>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>
